@@ -32,9 +32,13 @@ const reducer = (state = initialState, action) => {
                 results: state.results.concat({id: new Date(), value: state.counter})
             }
         case 'DELETE_RESULT':
-        return {
-                ...state
-        }
+            // This how to delete elements from an array immutibly
+            const updatedArray = state.results.filter(result => result.id !== action.resultElId);
+            return {
+                    ...state,
+                    results: updatedArray
+                    
+            }
     } 
     return state;
 };
