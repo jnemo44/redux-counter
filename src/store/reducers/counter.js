@@ -1,8 +1,7 @@
-import * as actionTypes from './action';
+import * as actionTypes from '../action';
 
 const initialState = {
-    counter: 0,
-    results: []
+    counter: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -27,19 +26,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 counter: state.counter - action.value
-            }
-        case actionTypes.STORE_RESULT:
-            return {
-                ...state,
-                results: state.results.concat({id: new Date(), value: state.counter})
-            }
-        case actionTypes.DELETE_RESULT:
-            // This how to delete elements from an array immutibly
-            const updatedArray = state.results.filter(result => result.id !== action.resultElId);
-            return {
-                    ...state,
-                    results: updatedArray
-                    
             }
     } 
     return state;
