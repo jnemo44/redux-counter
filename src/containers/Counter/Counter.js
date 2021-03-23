@@ -10,7 +10,7 @@ class Counter extends Component {
     state = {
         counter: 0
     }
-
+/*
     counterChangedHandler = ( action, value ) => {
         switch ( action ) {
             case 'inc':
@@ -27,7 +27,7 @@ class Counter extends Component {
                 break;
         }
     }
-
+*/
     render () {
         return (
             <div>
