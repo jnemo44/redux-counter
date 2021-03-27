@@ -8,7 +8,7 @@ const initialState = {
 const deleteResult = (state, action) => {
     // This how to delete elements from an array immutibly
     const updatedArray = state.results.filter(result => result.id !== action.resultElId);
-    return updatedObject(state, {results: updatedArray});
+    return updateObject(state, {results: updatedArray});
 }
 
 const reducer = (state = initialState, action) => {
